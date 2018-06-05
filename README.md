@@ -12,16 +12,19 @@ a. Cada um dos 3 programas C ( soma.c, media.c, mediaPrecos.c ) deve
 ser traduzido para o Assembly do MIPS 32 bits. Deve ser gerado um
 arquivo .asm ( soma.asm, media.asm, mediaPrecos.asm ) para cada
 programa C traduzido.
+
 b. Cada programa traduzido deve usar os mesmos tipos de dados usados
 nos programas C. OBS.: lembrar que cada mensagem impressa em
 programas C, via comando printf(), deve ser declarado como uma
 variável .asciiz no Assembly do MIPS 32 bits.
+
 c. Cada programa traduzido deve mapear os comandos usados em
 linguagem C para o conjunto de instruções do MIPS 32, devendo garantir
 a correta semântica do programa (ou seja, o programa Assembly deve
 gerar a mesma saída gerada pelo programa C). As instruções MIPS a
 serem usadas para traduzir cada comando ficam a critério do aluno, de
 acordo com os exemplos discutidos em sala de aula.
+
 d. Sugere-se usar o ambiente MARS MIPS Simulator, disponível na página
 da disciplina no Moodle UFBA.
 
