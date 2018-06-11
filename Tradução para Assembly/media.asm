@@ -83,7 +83,7 @@ ELSE :
   li $v0, 4  			 # serviço 4 - print string
   la $a0, mensagem4 		 # carrega em $a0 o endereço da mensagem a ser impressa
   syscall
-  li $v0, 2  			# imprime média (float), argumento em $f7
+  li $v0, 2  			# imprime média (float), argumento em $f12
   syscall
   li $v0, 4 			# serviço 4 - print string
   la $a0, mensagem6		# carrega em $a0 o endereço da mensagem a ser impressa
