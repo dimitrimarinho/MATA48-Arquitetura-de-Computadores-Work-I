@@ -7,6 +7,7 @@ precomedio : .float
 mensagem1 : .asciiz "Informe o preco do produto "
 mensagem2 : .asciiz ": \n"
 mensagem3 : .asciiz "Preco medio dos produtos: \n" 
+zero : .asciiz "0"
 
 .text
 
@@ -66,12 +67,10 @@ somando:
 	#div.s dividir
 	
 saida:
-
-  mfc1 $s0, $f1			# Jogando o valor (.word) da soma no espaço float
+ 
+  mtc1 $s0, $f1			# Jogando o valor (.word) da soma no espaço float
   cvt.s.w $f1, $f1		# Convertendo o .word da soma em .float
-  mfc1 $t1, $f5
-  cvt.s.w $f5, $f5
-  # lwc1 $f5, divisor		# $f5 mapeia o divisor
+  lwc1 $f5, divisor		# $f5 mapeia o divisor
   div.s $f12, $f1, $f5		# divide somatório das notas ($f4) por 10.0 ($f5)
   
   li $v0, 4  			 # serviço 4 - print string
@@ -79,6 +78,10 @@ saida:
   syscall
   
   li $v0, 2  			# imprime média (float), argumento em $f12
+  syscall
+  
+  li $v0, 4  			 # serviço 4 - print string
+  la $a0, zero	 		 # carrega em $a0 o endereço da mensagem a ser impressa
   syscall
 
   li $v0,10 			# função: terminar execução (system call for exit)
